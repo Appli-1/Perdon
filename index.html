@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perdon</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            background-color: #50C878; /* Color verde esmeralda */
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        #image {
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>¿Me perdonas? 😢</h1>
+    <div class="buttons">
+        <button id="yesButton">Sí</button>
+        <button id="noButton">No</button>
+    </div>
+    <img id="image" src="chill de .png" alt="Imagen">
+    <script>
+        let noClickCount = 0;
+
+        document.getElementById('noButton').addEventListener('click', function() {
+            noClickCount++;
+            if (noClickCount === 5) {
+                alert('Yaaaa perdonameeee.');
+            } else if (noClickCount === 10) {
+                alert('Porfavor te invito una comidita.');
+            }
+            else if (noClickCount === 15) {
+                alert('Te doy lo que quieras pero ya perdoname😢😢😢😢😢😢😢😢😢😢😢😢😢.');
+            }
+            this.style.position = 'absolute';
+            this.style.top = Math.random() * (window.innerHeight - this.offsetHeight) + 'px';
+            this.style.left = Math.random() * (window.innerWidth - this.offsetWidth) + 'px';
+        });
+
+        document.getElementById('yesButton').addEventListener('click', function() {
+            alert('¡Yo sabia que me ibas a perdonar hater, mucho exito mañana en tu examen tqm!');
+            document.getElementById('image').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
